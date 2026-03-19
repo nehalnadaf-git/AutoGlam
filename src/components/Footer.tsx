@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Globe, Clock, Instagram, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -20,7 +21,7 @@ const Footer = () => (
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <img src={logo} alt="Auto Glam" className="h-20 md:h-24 w-auto object-contain drop-shadow-lg" />
+          <Image src={logo} alt="Auto Glam" width={220} height={96} className="h-20 md:h-24 w-auto object-contain drop-shadow-lg" />
           <div>
             <div className="footer-logo-text">AUTO GLAM</div>
             <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "12px", color: "var(--text-muted-dark)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "2px" }}>
@@ -51,7 +52,7 @@ const Footer = () => (
               { label: "Contact",  path: "/contact" },
             ].map((l) => (
               <li key={l.path}>
-                <Link to={l.path} className="footer-link">{l.label}</Link>
+                <Link href={l.path} className="footer-link">{l.label}</Link>
               </li>
             ))}
           </ul>

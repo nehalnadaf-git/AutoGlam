@@ -1,6 +1,9 @@
+"use client";
+
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
+import Image from "next/image";
 // New images from public/Images/In Action folder
 const galleryImages = [
   { src: "/Images/In%20Action/Wash.png",   alt: "Premium car wash in action",             rotation: -6,  offset: 20  },
@@ -116,7 +119,13 @@ const TechnicalGallery = () => {
                   el.style.zIndex = "0";
                 }}
               >
-                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover select-none pointer-events-none" />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={560}
+                  height={740}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                />
                 {/* Gold bottom accent on hover */}
                 <div
                   style={{

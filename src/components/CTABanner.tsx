@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -61,7 +63,7 @@ const CTABanner = () => {
           Visit us at Keshwapur, Hubballi — Open 7 Days, 9 AM to 8 PM
         </p>
 
-        <Link to="/contact" className="btn-primary">
+        <Link href="/contact" className="btn-primary">
           Contact Us Today
           <ArrowRight size={16} />
         </Link>

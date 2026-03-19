@@ -1,73 +1,33 @@
-# Welcome to your Lovable project
+# Auto Glam (Next.js)
 
-## Project info
+Auto Glam is a Next.js 15 App Router website for premium car care services, including detailing, ceramic coating, and paint protection film.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Stack
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+- Next.js 15 (App Router)
+- React 18 + TypeScript
 - Tailwind CSS
+- shadcn/ui + Radix UI
+- Vitest
 
-## How can I deploy this project?
+## Scripts
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- `npm run dev` - start local development server
+- `npm run build` - create production build
+- `npm run start` - run production server
+- `npm run lint` - run ESLint
+- `npm run test` - run Vitest once
+- `npm run test:watch` - run Vitest in watch mode
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+- `src/app` - App Router routes, layout, metadata, sitemap, robots
+- `src/views` - page view components rendered by app routes
+- `src/components` - reusable UI and feature components
+- `src/data` - static domain data (services, slugs, SEO text)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Notes
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Canonical domain is set to `https://www.autoglam.com`.
+- Dynamic service detail pages are generated from `src/data/services.ts`.
+- Structured data is rendered through `src/components/seo/LocalBusinessSchema.tsx`.

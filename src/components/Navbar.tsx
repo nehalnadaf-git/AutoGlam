@@ -1,6 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -16,7 +20,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => {
@@ -44,7 +48,7 @@ const Navbar = () => {
   useEffect(() => {
     if (open) handleClose();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -54,10 +58,12 @@ const Navbar = () => {
   return (
     <nav className={`navbar${scrolled ? " scrolled" : ""}${isHidden ? " hidden-navbar" : ""}`}>
       {/* ── Logo ── */}
-      <Link to="/" className="relative z-50 flex items-center gap-3">
-        <img
+      <Link href="/" className="relative z-50 flex items-center gap-3">
+        <Image
           src={logo}
           alt="Auto Glam"
+          width={220}
+          height={90}
           className="h-[52px] md:h-[72px] w-auto -my-[4px] md:-my-[12px] transition-all duration-300 drop-shadow-lg"
         />
       </Link>
@@ -67,8 +73,8 @@ const Navbar = () => {
         {navLinks.map((l) => (
           <Link
             key={l.path}
-            to={l.path}
-            className={`nav-link${location.pathname === l.path ? " active" : ""}`}
+            href={l.path}
+            className={`nav-link${pathname === l.path ? " active" : ""}`}
           >
             {l.label}
           </Link>
@@ -103,11 +109,11 @@ const Navbar = () => {
           <div className="mobile-menu-inner flex flex-col justify-center items-center h-full">
             <nav className="mobile-menu-nav flex flex-col items-center gap-4 w-full" aria-label="Mobile navigation">
               {navLinks.map((l, i) => {
-                const isActive = location.pathname === l.path;
+                const isActive = pathname === l.path;
                 return (
                   <Link
                     key={l.path}
-                    to={l.path}
+                    href={l.path}
                     onClick={handleClose}
                     className={`mobile-nav-item text-center${isActive ? " active" : ""}`}
                     style={{ animationDelay: `${0.08 + i * 0.07}s`, border: "none" }}
@@ -118,7 +124,7 @@ const Navbar = () => {
               })}
 
               <Link
-                to="/contact"
+                href="/contact"
                 onClick={handleClose}
                 className="mobile-menu-cta-primary mt-8 w-[220px]"
                 style={{ animationDelay: `${0.08 + navLinks.length * 0.07}s` }}
