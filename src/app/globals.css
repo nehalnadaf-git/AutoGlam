@@ -366,6 +366,114 @@
 }
 
 /* =========================================================
+   HERO CTA BUTTONS — calibrated for banner aspect ratios
+   Web banner:    1920×900  (landscape, ~47% height:width)
+   Mobile banner: 1080×1440 (portrait,  ~133% height:width)
+   ========================================================= */
+
+/* Base: mobile-first */
+.hero-cta-wrap {
+  position: absolute;
+  bottom: 24px;             /* mobile: 24px from bottom of tall portrait image */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+/* Mobile buttons — compact but readable */
+.hero-cta-primary {
+  font-size: 11px !important;
+  padding: 11px 32px !important;
+  border-radius: 2px !important;
+  min-width: 180px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.50) !important;
+  letter-spacing: 0.14em !important;
+}
+.hero-cta-secondary {
+  font-size: 11px !important;
+  padding: 11px 32px !important;
+  border-radius: 2px !important;
+  min-width: 180px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  background: rgba(0,0,0,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  letter-spacing: 0.14em !important;
+}
+.hero-cta-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ── DESKTOP (≥768px) ──────────────────────────────────────
+   Web banner 1920×900: at typical 1440px wide the banner is
+   675px tall. 10% from bottom = ~67px. Use clamp for safety.
+   ────────────────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero-cta-wrap {
+    flex-direction: column;
+    bottom: clamp(56px, 9%, 100px);
+    gap: 16px;
+  }
+  .hero-cta-primary {
+    font-size: 14px !important;
+    padding: 18px 60px !important;
+    border-radius: 2px !important;
+    min-width: 240px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55),
+                0 0 0 1px rgba(201,168,76,0.18) !important;
+    letter-spacing: 0.17em !important;
+  }
+  .hero-cta-secondary {
+    font-size: 14px !important;
+    padding: 18px 60px !important;
+    border-radius: 2px !important;
+    min-width: 240px !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    letter-spacing: 0.17em !important;
+  }
+  .hero-cta-icon {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* ── LARGE DESKTOP (≥1280px) ───────────────────────────────
+   Banner is more fully displayed — push buttons slightly
+   higher so they sit in the visual centre of lower third.
+   ────────────────────────────────────────────────────────── */
+@media (min-width: 1280px) {
+  .hero-cta-wrap {
+    bottom: clamp(60px, 10%, 110px);
+    gap: 18px;
+  }
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    font-size: 14px !important;
+    padding: 20px 72px !important;
+    min-width: 260px !important;
+    letter-spacing: 0.18em !important;
+  }
+  .hero-cta-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* =========================================================
    BUTTONS
    ========================================================= */
 

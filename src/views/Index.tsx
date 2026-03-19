@@ -124,15 +124,16 @@ const Index = () => {
             className="w-full h-auto block md:hidden"
           />
           
-          {/* Buttons overlaid - optimized for professional fit */}
-          <div className="absolute bottom-10 md:bottom-20 left-0 right-0 flex flex-col justify-center items-center gap-4 px-6 z-10 animate-4" style={{ animationDelay: '0.2s' }}>
-            <Link href="/services" className="btn-primary shadow-[0_4px_20px_rgba(0,0,0,0.5)] !text-[11px] !px-6 !py-2.5 !md:text-[15px] !md:px-[42px] !md:py-[18px]">
-              Our Services <ArrowRight className="w-[15px] h-[15px] md:w-[18px] md:h-[18px]" />
+          {/* CTA Buttons — sized perfectly for web and mobile */}
+          <div className="hero-cta-wrap animate-4" style={{ animationDelay: '0.2s' }}>
+            <Link href="/services" className="btn-primary hero-cta-primary">
+              Our Services <ArrowRight className="hero-cta-icon" />
             </Link>
-            <Link href="/contact" className="btn-secondary-dark bg-black/50 backdrop-blur-sm border-white/20 !text-[11px] !px-6 !py-2.5 !md:text-[15px] !md:px-[42px] !md:py-[18px]">
+            <Link href="/contact" className="btn-secondary-dark hero-cta-secondary">
               Book Appointment
             </Link>
           </div>
+
         </div>
       </section>
 
