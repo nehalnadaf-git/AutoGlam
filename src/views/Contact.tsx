@@ -33,12 +33,13 @@ const contactSchema = z.object({
   name:    z.string().trim().min(1, "Name is required").max(100),
   phone:   z.string().trim().min(10, "Enter a valid phone number").max(15),
   service: z.string().min(1, "Select a service"),
+  customService: z.string().trim().optional(),
   message: z.string().trim().max(1000).optional(),
 });
 
 const serviceOptions = [
   "Washing", "Interior Cleaning", "Paint Correction", "Glass Treatment",
-  "Ceramic Coating", "Wrapping", "PPF", "Painting", "Accessories", "Headlight Restoration",
+  "Ceramic Coating", "Wrapping", "PPF", "Painting", "Accessories", "Headlight Restoration", "Other"
 ];
 
 /* Shared input styles */
@@ -68,7 +69,7 @@ const labelStyle: React.CSSProperties = {
 };
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", phone: "", service: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", service: "", customService: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -98,7 +99,7 @@ const Contact = () => {
       ``,
       `👤 *Name:*    ${form.name}`,
       `📱 *Phone:*   ${form.phone}`,
-      `🔧 *Service:* ${form.service}`,
+      `🔧 *Service:* ${form.service === "Other" && form.customService ? form.customService.trim() : form.service}`,
       form.message.trim()
         ? `💬 *Message:* ${form.message.trim()}`
         : null,
@@ -135,7 +136,7 @@ const Contact = () => {
 
       {/* 2. CONTACT SECTION — light */}
       <section className="section-light" style={{ padding: "var(--section-padding-lg) 0" }}>
-        <div style={{ maxWidth: "var(--container-xl)", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "var(--container-xl)", margin: "0 auto", padding: "0 clamp(16px, 4vw, 48px)" }}>
           <div className="flex flex-col md:grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-[var(--gap-xl)] items-start">
             {/* Info card */}
             <Reveal>
@@ -336,6 +337,19 @@ const Contact = () => {
                         ))}
                       </select>
                       {errors.service && <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "12px", color: "#e53e3e", marginTop: "4px" }}>{errors.service}</p>}
+                      
+                      {form.service === "Other" && (
+                        <div style={{ marginTop: "12px" }}>
+                          <input
+                            value={form.customService}
+                            onChange={(e) => setForm({ ...form, customService: e.target.value })}
+                            placeholder="Write your custom service request here..."
+                            style={{ ...inputStyle, background: "var(--color-light-card)", border: "1px solid var(--color-light-border)", color: "var(--text-primary-light)" }}
+                            onFocus={(e) => (e.currentTarget.style.borderColor = "var(--color-gold-dark)")}
+                            onBlur={(e) => (e.currentTarget.style.borderColor = "var(--color-light-border)")}
+                          />
+                        </div>
+                      )}
                     </div>
 
                     {/* Message */}

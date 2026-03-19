@@ -3855,6 +3855,10 @@ body {
     margin-top: 0px;
   }
 
+  .sm\:mt-14{
+    margin-top: 3.5rem;
+  }
+
   .sm\:flex{
     display: flex;
   }
@@ -3873,6 +3877,10 @@ body {
 
   .sm\:w-\[52px\]{
     width: 52px;
+  }
+
+  .sm\:w-auto{
+    width: auto;
   }
 
   .sm\:max-w-\[500px\]{

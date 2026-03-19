@@ -109,11 +109,11 @@ const About = () => (
                 </p>
               </div>
 
-              <div style={{ display: "flex", gap: "20px", marginTop: "56px", flexWrap: "wrap" }}>
-                <Link href="/services" className="btn-primary" style={{ padding: "18px 48px", borderRadius: "100px" }}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10 sm:mt-14 w-full">
+                <Link href="/services" className="btn-primary w-full sm:w-auto justify-center" style={{ padding: "16px 42px", borderRadius: "2px" }}>
                   Explore Our Services
                 </Link>
-                <Link href="/contact" className="btn-secondary-light" style={{ padding: "18px 48px", borderRadius: "100px", border: "1px solid #ddd" }}>
+                <Link href="/contact" className="btn-secondary-light w-full sm:w-auto justify-center" style={{ padding: "16px 42px", borderRadius: "2px", border: "1px solid var(--color-light-border)" }}>
                   Visit Our Studio
                 </Link>
               </div>
