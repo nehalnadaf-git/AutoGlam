@@ -9,7 +9,7 @@ import CTABanner from "@/components/CTABanner";
 import TechnicalGallery from "@/components/TechnicalGallery";
 import {
   Droplets, SprayCan, Paintbrush, GlassWater, Shield, Layers,
-  ArrowRight, Star, Quote
+  ArrowRight, Star, Quote, Film, Lightbulb
 } from "lucide-react";
 import { useRef } from "react";
 import {
@@ -55,6 +55,8 @@ const services = [
   { icon: GlassWater, title: "Glass Treatment",   desc: "Advanced coating for lasting visibility and maximum windshield protection." },
   { icon: Shield,     title: "Ceramic Coating",   desc: "Liquid polymer for lasting gloss, hydrophobic protection, and showroom finish." },
   { icon: Layers,     title: "Wrapping",           desc: "Premium vinyl wrapping for style and paint protection with a distinctive appeal." },
+  { icon: Film,       title: "PPF",                desc: "Transparent film shield that protects against rock chips, scratches, and environmental damage — invisible, permanent protection." },
+  { icon: Lightbulb,  title: "Headlight Restoration", desc: "Restore faded, yellowed headlights to crystal clarity — improving both the aesthetics and safety of your vehicle." },
 ];
 
 /* ── Testimonials data ── */
@@ -244,7 +246,7 @@ const Index = () => {
             }}
           >
             {services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 80} className="h-full">
+              <Reveal key={s.title} delay={i * 80} className={`h-full ${i >= 6 ? "hidden md:block" : ""}`}>
                 <div className="card-dark h-full flex flex-col">
                   <div className="service-icon-wrap">
                     <s.icon size={22} color="var(--color-gold)" />
