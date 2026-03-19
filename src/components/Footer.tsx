@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Globe, Clock, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Globe, Clock, Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -112,11 +112,8 @@ const Footer = () => (
             <a href="https://wa.me/919686363735" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="WhatsApp">
               <MessageCircle size={16} />
             </a>
-            <a href="#" className="social-icon-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/agautoglam/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Instagram">
               <Instagram size={16} />
-            </a>
-            <a href="#" className="social-icon-btn" aria-label="Facebook">
-              <Facebook size={16} />
             </a>
           </div>
         </div>

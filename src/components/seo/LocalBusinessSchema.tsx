@@ -45,8 +45,7 @@ export function LocalBusinessSchema() {
       name: "Your City",
     },
     sameAs: [
-      "https://www.instagram.com/autoglam",
-      "https://www.facebook.com/autoglam",
+      "https://www.instagram.com/agautoglam/",
     ],
   };
 

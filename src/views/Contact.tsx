@@ -91,6 +91,30 @@ const Contact = () => {
       return;
     }
     setErrors({});
+
+    // ── Build professional WhatsApp message ──────────────────
+    const lines = [
+      `🚗 *New Booking Request — Auto Glam*`,
+      ``,
+      `👤 *Name:*    ${form.name}`,
+      `📱 *Phone:*   ${form.phone}`,
+      `🔧 *Service:* ${form.service}`,
+      form.message.trim()
+        ? `💬 *Message:* ${form.message.trim()}`
+        : null,
+      ``,
+      `_Sent via autoglam.com contact form_`,
+    ]
+      .filter((line) => line !== null)
+      .join("\n");
+
+    const waNumber = "916363278962"; // India country code + business number
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(lines)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+
+    // Show success state on the site
     setSubmitted(true);
   };
 
@@ -252,9 +276,9 @@ const Contact = () => {
                   >
                     ✓
                   </div>
-                  <h3 className="section-title" style={{ color: "var(--text-primary-light)", fontSize: "28px" }}>Message Sent!</h3>
-                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "14px", fontWeight: 300, color: "var(--text-secondary-light)" }}>
-                    Thank you! We&apos;ll get back to you soon.
+                  <h3 className="section-title" style={{ color: "var(--text-primary-light)", fontSize: "28px" }}>WhatsApp Opened!</h3>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "14px", fontWeight: 300, color: "var(--text-secondary-light)", maxWidth: "320px", lineHeight: 1.7 }}>
+                    Your booking details have been pre-filled in WhatsApp. Just tap <strong>Send</strong> and we&apos;ll get back to you shortly.
                   </p>
                 </div>
               ) : (

@@ -53,7 +53,7 @@ const About = () => (
       <div style={{ maxWidth: "var(--container-xl)", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ 
           display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
           gap: "clamp(40px, 8vw, 100px)", 
           alignItems: "center" 
         }}>

@@ -240,7 +240,7 @@ const Index = () => {
           3. SERVICES PREVIEW — dark
       ══════════════════════════════════════════ */}
       <section className="section-dark-atmospheric" style={{ padding: "var(--section-padding-lg) 0" }}>
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "var(--container-xl)", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "var(--container-xl)", margin: "0 auto", padding: "0 clamp(16px, 4vw, 48px)" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
               <span className="eyebrow">What We Do</span>
@@ -266,7 +266,7 @@ const Index = () => {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
               gap: "24px",
             }}
           >
@@ -396,13 +396,10 @@ const Index = () => {
                 />
                 
                 {/* Mobile Workshop Announcement Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-5 py-3 border border-black/5 rounded-sm md:hidden shadow-xl flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-5 py-3 border border-black/5 rounded-sm md:hidden shadow-xl flex items-center justify-center text-center">
                   <div>
                     <span className="block text-[10px] font-bold tracking-widest uppercase text-[#A07830] mb-0.5">Premium Studio</span>
                     <span className="block text-[14px] font-semibold text-[#0F0F0F]">State-of-the-Art Workshop</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full border border-[#C9A84C] flex items-center justify-center bg-[#C9A84C]/10 text-[#A07830]">
-                    <ArrowRight size={14} />
                   </div>
                 </div>
               </div>
