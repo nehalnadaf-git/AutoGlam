@@ -11,7 +11,7 @@ import {
   Droplets, SprayCan, Paintbrush, GlassWater, Shield, Layers,
   ArrowRight, Star, Quote
 } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -19,14 +19,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import Autoplay from "embla-carousel-autoplay";
 
 
@@ -78,25 +70,6 @@ const Index = () => {
   const plugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
-
-  // Review Form State
-  const [isReviewOpen, setIsReviewOpen] = useState(false);
-  const [reviewForm, setReviewForm] = useState({ name: "", rating: 5, text: "" });
-  const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
-
-  const handleReviewSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!reviewForm.name || !reviewForm.text) return;
-    setIsReviewSubmitted(true);
-    setTimeout(() => {
-      setIsReviewOpen(false);
-      setTimeout(() => {
-        setIsReviewSubmitted(false);
-        setReviewForm({ name: "", rating: 5, text: "" });
-      }, 500);
-    }, 2500);
-  };
-
   return (
     <>
       {/* ══════════════════════════════════════════
@@ -500,83 +473,7 @@ const Index = () => {
             </div>
           </Carousel>
 
-          {/* WRITE REVIEW CTA */}
-          <div className="mt-16 text-center border-t border-white/10 pt-10">
-            <h3 className="text-white text-xl font-medium mb-4 font-['Outfit']">Experienced our exceptional service?</h3>
-            
-            <Dialog open={isReviewOpen} onOpenChange={setIsReviewOpen}>
-              <DialogTrigger asChild>
-                <button className="btn-secondary-dark !px-8 hover:!bg-[#C9A84C]/10 transition-colors">
-                  Write a Review
-                </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[500px] bg-[#141414] border-[#C9A84C]/20 text-white shadow-2xl shadow-black/80">
-                {!isReviewSubmitted ? (
-                  <>
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-['Cormorant_Garamond'] text-white">Share Your Experience</DialogTitle>
-                      <DialogDescription className="text-white/60 font-['Outfit']">
-                        Let us and the community know about your time at Auto Glam.
-                      </DialogDescription>
-                    </DialogHeader>
 
-                    <form onSubmit={handleReviewSubmit} className="space-y-6 mt-4">
-                      <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest text-[#C9A84C] font-semibold">Your Name</label>
-                        <input 
-                          type="text" 
-                          required
-                          value={reviewForm.name}
-                          onChange={(e) => setReviewForm({ ...reviewForm, name: e.target.value })}
-                          className="w-full bg-[#1C1C1C] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#C9A84C] outline-none transition-colors"
-                          placeholder="John Doe"
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest text-[#C9A84C] font-semibold">Rating</label>
-                        <div className="flex gap-2">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <button
-                              key={star}
-                              type="button"
-                              onClick={() => setReviewForm({ ...reviewForm, rating: star })}
-                              className="focus:outline-none transition-transform hover:scale-110"
-                            >
-                              <Star className={`w-8 h-8 ${reviewForm.rating >= star ? 'fill-[#C9A84C] text-[#C9A84C]' : 'text-white/20'}`} />
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest text-[#C9A84C] font-semibold">Your Review</label>
-                        <textarea 
-                          required
-                          value={reviewForm.text}
-                          onChange={(e) => setReviewForm({ ...reviewForm, text: e.target.value })}
-                          className="w-full bg-[#1C1C1C] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#C9A84C] outline-none transition-colors min-h-[120px] resize-none"
-                          placeholder="Tell us what you loved..."
-                        />
-                      </div>
-
-                      <button type="submit" className="w-full btn-primary justify-center font-['Outfit'] h-12">
-                        Submit Review
-                      </button>
-                    </form>
-                  </>
-                ) : (
-                  <div className="py-12 flex flex-col items-center justify-center text-center space-y-4 animate-in fade-in zoom-in duration-500">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#C9A84C] to-[#F0D060] flex items-center justify-center mb-4">
-                      <Star className="w-8 h-8 text-black fill-black" />
-                    </div>
-                    <h3 className="text-3xl font-['Cormorant_Garamond'] text-white">Thank You!</h3>
-                    <p className="text-white/60 font-['Outfit']">Your premium review has been submitted and will be reviewed by our team.</p>
-                  </div>
-                )}
-              </DialogContent>
-            </Dialog>
-          </div>
         </div>
       </section>
 
