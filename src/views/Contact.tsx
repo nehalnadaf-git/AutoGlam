@@ -99,11 +99,11 @@ const Contact = () => {
       ``,
       `Hello, I would like to request a booking with the following details:`,
       ``,
-      `*Client Name:*    ${form.name.trim()}`,
-      `*Phone Number:*   ${form.phone.trim()}`,
-      `*Service Type:*   ${form.service === "Other" && form.customService ? form.customService.trim() : form.service}`,
+      `*Name:*    ${form.name.trim()}`,
+      `*Phone:*   ${form.phone.trim()}`,
+      `*Service:* ${form.service === "Other" && form.customService ? form.customService.trim() : form.service}`,
       form.message.trim()
-        ? `*Additional Info:* ${form.message.trim()}`
+        ? `*Message:* ${form.message.trim()}`
         : null,
       ``,
       `Please let me know your earliest availability. Thank you.`,
