@@ -95,13 +95,13 @@ const Contact = () => {
 
     // ── Build professional WhatsApp message ──────────────────
     const lines = [
-      `🚗 *New Booking Request — Auto Glam*`,
+      `*New Booking Request — Auto Glam*`,
       ``,
-      `👤 *Name:*    ${form.name}`,
-      `📱 *Phone:*   ${form.phone}`,
-      `🔧 *Service:* ${form.service === "Other" && form.customService ? form.customService.trim() : form.service}`,
+      `*Name:*    ${form.name}`,
+      `*Phone:*   ${form.phone}`,
+      `*Service:* ${form.service === "Other" && form.customService ? form.customService.trim() : form.service}`,
       form.message.trim()
-        ? `💬 *Message:* ${form.message.trim()}`
+        ? `*Message:* ${form.message.trim()}`
         : null,
       ``,
       `_Sent via autoglam.com contact form_`,
