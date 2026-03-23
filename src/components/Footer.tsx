@@ -134,9 +134,7 @@ const Footer = () => (
         <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "12px", color: "var(--text-muted-dark)" }}>
           © 2025 Auto Glam Car Service Centre. All Rights Reserved.
         </p>
-        <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "12px", color: "var(--text-muted-dark)" }}>
-          Designed with ♥ in Hubballi
-        </p>
+
       </div>
     </div>
   </footer>
