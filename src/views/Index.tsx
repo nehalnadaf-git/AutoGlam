@@ -162,12 +162,14 @@ const Index = () => {
                     style={{ borderColor: "var(--color-light-border)" }}
                   >
                     <AccordionTrigger
+                      className="text-left py-3.5 md:py-4"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "15px",
+                        fontSize: "clamp(14px, 4.2vw, 15px)",
                         fontWeight: 600,
                         color: "var(--text-primary-light)",
-                        letterSpacing: "0.02em",
+                        letterSpacing: "0.01em",
+                        lineHeight: 1.3,
                       }}
                     >
                       {item.q}
