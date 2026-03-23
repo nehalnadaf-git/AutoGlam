@@ -423,23 +423,26 @@
 @media (min-width: 768px) {
   .hero-cta-wrap {
     flex-direction: column;
-    bottom: clamp(56px, 9%, 100px);
+    /* Lowered further for web (was clamp(32px, 6%, 70px)) */
+    bottom: clamp(16px, 4%, 50px);
     gap: 16px;
   }
   .hero-cta-primary {
-    font-size: 14px !important;
-    padding: 18px 60px !important;
+    /* Slightly smaller size for web (was 14px / 18px padding / 240px min-width) */
+    font-size: 12px !important;
+    padding: 14px 48px !important;
     border-radius: 2px !important;
-    min-width: 240px !important;
+    min-width: 210px !important;
     box-shadow: 0 8px 32px rgba(0,0,0,0.55),
                 0 0 0 1px rgba(201,168,76,0.18) !important;
     letter-spacing: 0.17em !important;
   }
   .hero-cta-secondary {
-    font-size: 14px !important;
-    padding: 18px 60px !important;
+    /* Slightly smaller size for web (was 14px / 18px padding / 240px min-width) */
+    font-size: 12px !important;
+    padding: 14px 48px !important;
     border-radius: 2px !important;
-    min-width: 240px !important;
+    min-width: 210px !important;
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(14px) !important;
     letter-spacing: 0.17em !important;
@@ -456,14 +459,17 @@
    ────────────────────────────────────────────────────────── */
 @media (min-width: 1280px) {
   .hero-cta-wrap {
-    bottom: clamp(60px, 10%, 110px);
+    flex-direction: column;
+    /* Lowered further for web (was clamp(36px, 7%, 80px)) */
+    bottom: clamp(20px, 5%, 60px);
     gap: 18px;
   }
   .hero-cta-primary,
   .hero-cta-secondary {
-    font-size: 14px !important;
-    padding: 20px 72px !important;
-    min-width: 260px !important;
+    /* Slightly smaller size for web (was 14px / 20px padding / 260px min-width) */
+    font-size: 13px !important;
+    padding: 16px 56px !important;
+    min-width: 230px !important;
     letter-spacing: 0.18em !important;
   }
   .hero-cta-icon {
