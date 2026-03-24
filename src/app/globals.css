@@ -72,6 +72,7 @@
     --color-light:        #F8F6F2;
     --color-light-card:   #F0EDE6;
     --color-light-border: #E0D8CC;
+    --color-platinum:     #E5E4E2;
 
     /* Text tokens */
     --text-primary-dark:   #FFFFFF;
@@ -910,10 +911,7 @@
 .footer-logo-text {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 28px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-platinum);
   letter-spacing: 0.05em;
 }
 .footer-link {
