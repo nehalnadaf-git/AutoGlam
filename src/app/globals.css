@@ -45,8 +45,8 @@
     --sidebar-ring: oklch(0.708 0 0);
 
     /* === HERO OVERLAY TOKENS === */
-    --hero-gradient-height-mobile: 100px;
-    --hero-gradient-height-desktop: 150px;
+    --hero-gradient-height-mobile: 80px;
+    --hero-gradient-height-desktop: 130px;
     --hero-gradient-opacity-mobile: rgba(0,0,0,0.45);
     --hero-gradient-opacity-desktop: rgba(0,0,0,0.7);
 

@@ -105,8 +105,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${bebasNeue.variable} ${cormorant.variable} ${outfit.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-obsidian text-ivory font-body antialiased">
+      <body className="bg-obsidian text-ivory font-body antialiased" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />
