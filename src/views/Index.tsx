@@ -129,7 +129,7 @@ const Index = () => {
               <div className="section-title-group">
                 <span className="eyebrow" style={{ color: "var(--color-gold-dark)" }}>Why Choose Us</span>
                 <h2 className="section-title" style={{ color: "var(--text-primary-light)", marginBottom: "16px", lineHeight: 1.1 }}>
-                  Why Choose <br className="hidden md:block" />
+                  Why Choose <br />
                   <em>Auto Glam?</em>
                 </h2>
               </div>
