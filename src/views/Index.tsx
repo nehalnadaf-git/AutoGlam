@@ -77,7 +77,7 @@ const Index = () => {
       {/* ══════════════════════════════════════════
           1. HERO — BANNER
       ══════════════════════════════════════════ */}
-      <section className="relative w-full bg-black pt-[60px] md:pt-[40px] flex justify-center">
+      <section className="relative w-full bg-black pt-[28px] md:pt-[8px] flex justify-center">
         <div className="w-full max-w-[1920px] relative">
           {/* Top Gradient Overlay */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 via-black/10 to-transparent pointer-events-none z-10"></div>
