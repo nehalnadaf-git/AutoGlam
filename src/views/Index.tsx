@@ -77,11 +77,8 @@ const Index = () => {
       {/* ══════════════════════════════════════════
           1. HERO — BANNER
       ══════════════════════════════════════════ */}
-      <section className="relative w-full bg-black pt-[28px] md:pt-[8px] flex justify-center">
-        <div className="w-full max-w-[1920px] relative">
-          {/* Top Gradient Overlay */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 via-black/10 to-transparent pointer-events-none z-10"></div>
-          
+      <section className="relative w-full bg-black pt-[76px] md:pt-[96px] overflow-hidden">
+        <div className="w-full max-w-[1920px] relative mx-auto overflow-hidden">
           <Image
             src="/Banner/Web%20Banner%20-%20wide.png"
             alt="Auto Glam Services Portfolio"
@@ -98,8 +95,11 @@ const Index = () => {
             priority
             className="w-full h-auto block md:hidden"
           />
-          
-          {/* CTA Buttons — sized perfectly for web and mobile */}
+
+          {/* Top Fade Gradient Overlay - Optimized for both Desktop & Mobile */}
+          <div className="hero-top-overlay" />
+
+          {/* CTA Buttons — absolutely overlaid at the bottom of the banner */}
           <div className="hero-cta-wrap animate-4" style={{ animationDelay: '0.2s' }}>
             <Link href="/services" className="btn-primary hero-cta-primary">
               Our Services <ArrowRight className="hero-cta-icon" />
@@ -111,6 +111,7 @@ const Index = () => {
 
         </div>
       </section>
+
 
       {/* ══════════════════════════════════════════
           MARQUEE STRIP

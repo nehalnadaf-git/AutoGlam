@@ -44,6 +44,12 @@
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
 
+    /* === HERO OVERLAY TOKENS === */
+    --hero-gradient-height-mobile: 100px;
+    --hero-gradient-height-desktop: 150px;
+    --hero-gradient-opacity-mobile: rgba(0,0,0,0.45);
+    --hero-gradient-opacity-desktop: rgba(0,0,0,0.7);
+
     /* === AUTO GLAM CORE PALETTE === */
     --color-black:        #080808;
     --color-dark:         #0F0F0F;
@@ -374,12 +380,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
   position: absolute;
-  bottom: 48px;
+  bottom: clamp(28px, 6%, 56px);
   left: 0;
   right: 0;
   z-index: 20;
+  padding: 0 20px;
 }
 
 
@@ -1193,30 +1201,29 @@
   .back-to-top    { bottom: 20px; right: 20px; }
 
   .marquee-section {
-    padding-top: 0;
-    margin-top: -16px;
+    padding: 12px 0;
   }
 
+
   .hero-cta-wrap {
-    display: flex;
+    /* Stay absolute — overlay on the mobile banner bottom */
+    position: absolute;
+    bottom: clamp(20px, 7%, 44px);
+    left: 0;
+    right: 0;
     flex-direction: column;
     width: 100%;
-    padding: 0 24px;
-    gap: 12px;
-    margin-top: -92px;
-    margin-bottom: 0px;
-    z-index: 20;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
+    padding: 0 28px;
+    gap: 10px;
     align-items: center;
+    background: none;
   }
-  
+
   .hero-cta-primary, .hero-cta-secondary {
     width: 100%;
-    max-width: 260px;
-    padding: 10px 24px !important;
+    max-width: 280px;
+    padding: 13px 24px !important;
+    font-size: 12px !important;
   }
 
   .about-brand-card {
@@ -1273,6 +1280,29 @@
     padding: 24px;
   }
 }
+
+/* =========================================================
+   CUSTOM OVERLAYS
+   ========================================================= */
+
+.hero-top-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  pointer-events: none;
+  height: var(--hero-gradient-height-mobile);
+  background: linear-gradient(to bottom, var(--hero-gradient-opacity-mobile) 0%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-top-overlay {
+    height: var(--hero-gradient-height-desktop);
+    background: linear-gradient(to bottom, var(--hero-gradient-opacity-desktop) 0%, transparent 100%);
+  }
+}
+
 @media (max-width: 1024px) {
   .navbar         { top: 20px; width: calc(100% - 40px); padding: 6px 24px; border-radius: 60px; }
   .navbar.scrolled{ padding: 6px 24px; }
