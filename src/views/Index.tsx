@@ -128,7 +128,7 @@ const Index = () => {
               <div className="section-title-group">
                 <span className="eyebrow" style={{ color: "var(--color-gold-dark)" }}>Why Choose Us</span>
                 <h2 className="section-title" style={{ color: "var(--text-primary-light)", marginBottom: "16px", lineHeight: 1.1 }}>
-                  Why Choose <br className="block md:hidden" />
+                  Why Choose <br className="hidden md:block" />
                   <em>Auto Glam?</em>
                 </h2>
               </div>
@@ -193,7 +193,7 @@ const Index = () => {
             {/* Right: image */}
             <Reveal delay={200} className="w-full">
               <div
-                className="card-light img-cinematic"
+                className="card-light img-cinematic mobile-no-frame"
                 style={{
                   padding: 0,
                   overflow: "hidden",
@@ -373,10 +373,10 @@ const Index = () => {
                 />
                 
                 {/* Mobile Workshop Announcement Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-5 py-3 border border-black/5 rounded-sm md:hidden shadow-xl flex items-center justify-center text-center">
+                <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md px-3 py-2 border border-white/20 rounded-lg md:hidden shadow-lg flex items-center justify-center text-center max-w-[200px] mx-auto">
                   <div>
-                    <span className="block text-[10px] font-bold tracking-widest uppercase text-[#A07830] mb-0.5">Premium Studio</span>
-                    <span className="block text-[14px] font-semibold text-[#0F0F0F]">State-of-the-Art Workshop</span>
+                    <span className="block text-[9px] font-bold tracking-widest uppercase text-white mb-0.5">Premium Studio</span>
+                    <span className="block text-[12px] font-medium text-white/90">State-of-the-Art Workshop</span>
                   </div>
                 </div>
               </div>

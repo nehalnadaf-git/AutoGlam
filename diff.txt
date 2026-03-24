@@ -1,0 +1,612 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 262f7a0..931dd4b 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -366,116 +366,21 @@
+ }
+ 
+ /* =========================================================
+-   HERO CTA BUTTONS — calibrated for banner aspect ratios
+-   Web banner:    1920×900  (landscape, ~47% height:width)
+-   Mobile banner: 1080×1440 (portrait,  ~133% height:width)
++   BUTTONS
+    ========================================================= */
+ 
+-/* Base: mobile-first */
+ .hero-cta-wrap {
++  display: flex;
++  justify-content: center;
++  align-items: center;
++  gap: 16px;
+   position: absolute;
+-  bottom: 24px;             /* mobile: 24px from bottom of tall portrait image */
++  bottom: 48px;
+   left: 0;
+   right: 0;
+-  z-index: 10;
+-  display: flex;
+-  flex-direction: column;
+-  align-items: center;
+-  justify-content: center;
+-  gap: 10px;
+-  padding: 0 20px;
+-}
+-
+-/* Mobile buttons — compact but readable */
+-.hero-cta-primary {
+-  font-size: 11px !important;
+-  padding: 11px 32px !important;
+-  border-radius: 2px !important;
+-  min-width: 180px !important;
+-  text-align: center !important;
+-  justify-content: center !important;
+-  box-shadow: 0 4px 18px rgba(0,0,0,0.50) !important;
+-  letter-spacing: 0.14em !important;
+-}
+-.hero-cta-secondary {
+-  font-size: 11px !important;
+-  padding: 11px 32px !important;
+-  border-radius: 2px !important;
+-  min-width: 180px !important;
+-  text-align: center !important;
+-  justify-content: center !important;
+-  background: rgba(0,0,0,0.50) !important;
+-  backdrop-filter: blur(10px) !important;
+-  -webkit-backdrop-filter: blur(10px) !important;
+-  border-color: rgba(255,255,255,0.25) !important;
+-  letter-spacing: 0.14em !important;
+-}
+-.hero-cta-icon {
+-  width: 14px;
+-  height: 14px;
+-  flex-shrink: 0;
++  z-index: 20;
+ }
+ 
+-/* ── DESKTOP (≥768px) ──────────────────────────────────────
+-   Web banner 1920×900: at typical 1440px wide the banner is
+-   675px tall. 10% from bottom = ~67px. Use clamp for safety.
+-   ────────────────────────────────────────────────────────── */
+-@media (min-width: 768px) {
+-  .hero-cta-wrap {
+-    flex-direction: column;
+-    bottom: clamp(56px, 9%, 100px);
+-    gap: 16px;
+-  }
+-  .hero-cta-primary {
+-    font-size: 14px !important;
+-    padding: 18px 60px !important;
+-    border-radius: 2px !important;
+-    min-width: 240px !important;
+-    box-shadow: 0 8px 32px rgba(0,0,0,0.55),
+-                0 0 0 1px rgba(201,168,76,0.18) !important;
+-    letter-spacing: 0.17em !important;
+-  }
+-  .hero-cta-secondary {
+-    font-size: 14px !important;
+-    padding: 18px 60px !important;
+-    border-radius: 2px !important;
+-    min-width: 240px !important;
+-    backdrop-filter: blur(14px) !important;
+-    -webkit-backdrop-filter: blur(14px) !important;
+-    letter-spacing: 0.17em !important;
+-  }
+-  .hero-cta-icon {
+-    width: 17px;
+-    height: 17px;
+-  }
+-}
+-
+-/* ── LARGE DESKTOP (≥1280px) ───────────────────────────────
+-   Banner is more fully displayed — push buttons slightly
+-   higher so they sit in the visual centre of lower third.
+-   ────────────────────────────────────────────────────────── */
+-@media (min-width: 1280px) {
+-  .hero-cta-wrap {
+-    bottom: clamp(60px, 10%, 110px);
+-    gap: 18px;
+-  }
+-  .hero-cta-primary,
+-  .hero-cta-secondary {
+-    font-size: 14px !important;
+-    padding: 20px 72px !important;
+-    min-width: 260px !important;
+-    letter-spacing: 0.18em !important;
+-  }
+-  .hero-cta-icon {
+-    width: 18px;
+-    height: 18px;
+-  }
+-}
+-
+-
+-/* =========================================================
+-   BUTTONS
+-   ========================================================= */
+ 
+ .btn-primary {
+   background: var(--gradient-gold);
+@@ -494,6 +399,7 @@
+   overflow: hidden;
+   display: inline-flex;
+   align-items: center;
++  justify-content: center;
+   gap: 8px;
+   text-decoration: none;
+ }
+@@ -516,6 +422,7 @@
+   transition: all 0.3s ease;
+   display: inline-flex;
+   align-items: center;
++  justify-content: center;
+   gap: 8px;
+   text-decoration: none;
+ }
+@@ -561,312 +468,125 @@
+ }
+ 
+ /* =========================================================
+-   ABOUT PAGE — BRAND CARD (image-based)
++   ABOUT PAGE ΓÇö BRAND CARD
+    ========================================================= */
+ 
+ .about-brand-card-wrap {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+-  align-items: center;
+-}
+-
+-/* Wrapper that gives the image its shadow + sizing */
+-.about-brand-card-image-wrap {
+-  /* Desktop size — matches the card image proportions */
+-  width: 540px;
+-  max-width: 100%;
+-  position: relative;
+-  border-radius: 28px;
+-  /* Refined layered shadow — elegant lift, does NOT bleed on white bg */
+-  filter:
+-    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12))
+-    drop-shadow(0 16px 40px rgba(0, 0, 0, 0.22))
+-    drop-shadow(0 40px 64px rgba(0, 0, 0, 0.14));
+-  transition: filter 0.35s ease, transform 0.35s ease;
+-}
+-.about-brand-card-image-wrap:hover {
+-  filter:
+-    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.14))
+-    drop-shadow(0 20px 50px rgba(0, 0, 0, 0.26))
+-    drop-shadow(0 48px 72px rgba(0, 0, 0, 0.16));
+-  transform: translateY(-4px);
+ }
+ 
+-/* The image itself — fills the wrapper, preserves aspect ratio */
+-.about-brand-card-image {
+-  width: 100%;
+-  height: auto;
+-  display: block;
+-  border-radius: 28px;
+-  object-fit: contain;
+-}
+-
+-
+-/* =========================================================
+-   ABOUT PAGE — PILLAR CARDS (PREMIUM DARK)
+-   ========================================================= */
+-
+-.about-pillars-section {
+-  background: linear-gradient(170deg, #0d0c09 0%, #111110 50%, #0a0a08 100%);
+-  padding: var(--section-padding-lg) 0;
++.about-brand-card {
++  width: min(100%, 460px);
++  min-height: 520px;
++  background: linear-gradient(180deg, #050505 0%, #090909 100%);
++  border-radius: 34px;
++  padding: clamp(28px, 4vw, 40px) clamp(22px, 3.5vw, 34px);
++  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.22);
+   position: relative;
++  display: flex;
++  flex-direction: column;
++  justify-content: flex-start;
++  align-items: center;
++  gap: clamp(34px, 6vw, 62px);
+   overflow: hidden;
+ }
+ 
+-/* Subtle textured background dots */
+-.about-pillars-section::before {
++.about-brand-card::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+-  background-image:
+-    radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(201,168,76,0.07) 0%, transparent 65%),
+-    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(201,168,76,0.04) 0%, transparent 60%),
+-    radial-gradient(ellipse 40% 30% at 0%  80%,   rgba(201,168,76,0.03) 0%, transparent 60%);
++  background:
++    radial-gradient(ellipse at 60% 10%, rgba(201, 168, 76, 0.08) 0%, transparent 55%),
++    radial-gradient(ellipse at 40% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+   pointer-events: none;
+ }
+ 
+-.about-pillars-inner {
+-  max-width: var(--container-xl);
+-  margin: 0 auto;
+-  padding: 0 24px;
+-  position: relative;
+-  z-index: 1;
+-}
+-
+-/* ── Section header ── */
+-.about-pillars-header {
+-  text-align: center;
+-  margin-bottom: 72px;
+-}
+-
+-.about-pillars-eyebrow {
+-  color: #c9a84c !important;
+-  margin-bottom: 18px;
+-  display: inline-block;
+-}
+-
+-.about-pillars-title {
+-  /* Matches site .section-title — Cormorant Garamond */
+-  font-family: 'Cormorant Garamond', serif;
+-  font-size: clamp(2rem, 6vw, 3.8rem);
+-  line-height: 1.1;
+-  color: #f0ece4;
+-  font-weight: 600;
+-  letter-spacing: 0.01em;
+-}
+-
+-.about-pillars-title em {
+-  font-style: italic;
+-  color: #c9a84c;
+-  font-weight: 300;
+-}
+-
+-.about-pillars-rule {
+-  width: 72px;
+-  height: 2px;
+-  background: linear-gradient(90deg, transparent, #c9a84c 30%, #e8ce7a 55%, #c9a84c 75%, transparent);
+-  margin: 24px auto 0;
+-  border-radius: 2px;
++.about-brand-card-border {
++  position: absolute;
++  inset: clamp(14px, 3vw, 20px);
++  border: 1px solid rgba(201, 168, 76, 0.2);
++  border-radius: 24px;
++  pointer-events: none;
+ }
+ 
+-/* ── Cards grid ── */
+-.about-pillars-grid {
+-  display: grid;
+-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+-  gap: 22px;
++.about-brand-top {
+   width: 100%;
+-}
+-
+-/* ── Individual card ── */
+-.about-pillar-card {
+-  position: relative;
+-  height: 100%;
++  padding-top: clamp(4px, 1.2vw, 10px);
+   display: flex;
+   flex-direction: column;
+-  padding: 36px 30px 30px;
+-  border-radius: 20px;
+-  background:
+-    radial-gradient(ellipse 90% 60% at 105% 0%,   rgba(201,168,76,0.07) 0%, transparent 60%),
+-    radial-gradient(ellipse 70% 50% at -5% 110%,  rgba(201,168,76,0.04) 0%, transparent 55%),
+-    linear-gradient(160deg, #1a1812 0%, #111010 60%, #0d0c09 100%);
+-  border: 1px solid rgba(201,168,76,0.14);
+-  overflow: hidden;
+-  cursor: default;
+-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+-              border-color 0.45s ease,
+-              box-shadow 0.45s ease;
+-  box-shadow:
+-    0 4px 12px rgba(0,0,0,0.25),
+-    0 20px 48px rgba(0,0,0,0.30);
+-}
+-
+-.about-pillar-card:hover {
+-  transform: translateY(-8px);
+-  border-color: rgba(201,168,76,0.35);
+-  box-shadow:
+-    0 8px 24px rgba(0,0,0,0.30),
+-    0 32px 64px rgba(0,0,0,0.35),
+-    0 0 0 1px rgba(201,168,76,0.18);
+-}
+-
+-
+-/* Animated gold top border */
+-.about-pillar-top-bar {
+-  position: absolute;
+-  top: 0; left: 0;
+-  width: 100%;
+-  height: 2.5px;
+-  background: linear-gradient(90deg, transparent, #c9a84c 25%, #e8ce7a 55%, #c9a84c 80%, transparent);
+-  transform: scaleX(0);
+-  transform-origin: left;
+-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+-}
+-.about-pillar-card:hover .about-pillar-top-bar {
+-  transform: scaleX(1);
+-}
+-
+-/* Icon area */
+-.about-pillar-icon-wrap {
+-  position: relative;
+-  width: 68px;
+-  height: 68px;
+-  margin-bottom: 32px;
+-  display: flex;
+   align-items: center;
+-  justify-content: center;
+-  flex-shrink: 0;
+-}
+-
+-.about-pillar-icon-ring {
+-  position: absolute;
+-  inset: 0;
+-  border-radius: 50%;
+-  border: 1.5px solid rgba(201,168,76,0.30);
+-  background: radial-gradient(circle at 40% 35%, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.04) 60%, transparent 100%);
+-  transition: border-color 0.45s ease, box-shadow 0.45s ease;
+-}
+-.about-pillar-card:hover .about-pillar-icon-ring {
+-  border-color: rgba(201,168,76,0.60);
+-  box-shadow: 0 0 24px rgba(201,168,76,0.18), inset 0 0 18px rgba(201,168,76,0.08);
+-}
+-
+-.about-pillar-icon {
++  text-align: center;
++  gap: clamp(8px, 1.3vw, 12px);
+   position: relative;
+   z-index: 1;
+-  color: #c9a84c !important;
+-  stroke: #c9a84c !important;
+-  transition: transform 0.35s ease, filter 0.35s ease;
+-}
+-.about-pillar-card:hover .about-pillar-icon {
+-  transform: scale(1.12);
+-  filter: drop-shadow(0 0 8px rgba(201,168,76,0.55));
+ }
+ 
+-/* Title — matches site .card-title (Outfit 600) */
+-.about-pillar-card-title {
+-  font-family: 'Outfit', sans-serif;
+-  font-size: 1.25rem;
+-  font-weight: 600;
+-  letter-spacing: 0.02em;
+-  color: #f0ece4;
+-  margin: 0 0 10px;
+-  line-height: 1.3;
+-  position: relative;
+-  z-index: 1;
++.about-brand-logo {
++  width: clamp(138px, 34vw, 196px);
++  height: auto;
++  display: block;
++  object-fit: contain;
++  margin-left: auto;
++  margin-right: auto;
++  margin-bottom: clamp(18px, 3vw, 26px);
++  transform: translateY(clamp(80px, 9.6vw, 88px));
++  filter: drop-shadow(0 12px 22px rgba(180, 140, 52, 0.25));
+ }
+ 
+-/* Animated rule under title */
+-.about-pillar-title-rule {
+-  width: 36px;
+-  height: 1.5px;
+-  background: linear-gradient(90deg, #c9a84c, #e8ce7a 60%, transparent);
+-  border-radius: 2px;
+-  margin-bottom: 20px;
+-  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+-}
+-.about-pillar-card:hover .about-pillar-title-rule {
+-  width: 64px;
++.about-brand-title {
++  font-family: 'Bebas Neue', sans-serif;
++  font-size: clamp(50px, 8.2vw, 66px);
++  line-height: 0.9;
++  letter-spacing: 0.035em;
++  width: 100%;
++  text-align: center;
++  color: #efefef;
+ }
+ 
+-/* Description */
+-.about-pillar-desc {
++.about-brand-tagline {
++  display: block;
+   font-family: 'Outfit', sans-serif;
+-  font-size: 15px;
+-  font-weight: 300;
+-  line-height: 1.85;
+-  color: rgba(220,210,190,0.60);
+-  margin: 0;
+-  flex: 1;
+-  position: relative;
+-  z-index: 1;
+-  transition: color 0.35s ease;
+-}
+-.about-pillar-card:hover .about-pillar-desc {
+-  color: rgba(220,210,190,0.80);
++  font-size: clamp(11px, 2vw, 13px);
++  font-weight: 500;
++  letter-spacing: clamp(0.22em, 0.8vw, 0.3em);
++  text-transform: uppercase;
++  text-align: center;
++  color: #c9a84c;
++  margin-right: 0;
+ }
+ 
+-/* Footer row */
+-.about-pillar-footer {
++.about-brand-bottom {
++  width: 100%;
+   display: flex;
++  flex-direction: column;
+   align-items: center;
+-  justify-content: space-between;
+-  margin-top: 36px;
+-  padding-top: 22px;
+-  border-top: 1px solid rgba(201,168,76,0.10);
++  gap: clamp(14px, 1.8vw, 20px);
++  margin-top: auto;
++  padding-bottom: clamp(8px, 1.8vw, 14px);
+   position: relative;
+   z-index: 1;
+-  transition: border-color 0.35s ease;
+-}
+-.about-pillar-card:hover .about-pillar-footer {
+-  border-color: rgba(201,168,76,0.22);
+-}
+-
+-.about-pillar-footer-label {
+-  font-family: 'Outfit', sans-serif;
+-  font-size: 10px;
+-  font-weight: 600;
+-  letter-spacing: 0.28em;
+-  text-transform: uppercase;
+-  color: rgba(201,168,76,0.55);
+-  transition: color 0.35s ease;
+-}
+-.about-pillar-card:hover .about-pillar-footer-label {
+-  color: rgba(201,168,76,0.85);
+ }
+ 
+-.about-pillar-arrow {
+-  width: 32px;
+-  height: 32px;
+-  border-radius: 50%;
+-  border: 1px solid rgba(201,168,76,0.22);
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+-  flex-shrink: 0;
+-}
+-.about-pillar-card:hover .about-pillar-arrow {
+-  background: rgba(201,168,76,0.10);
+-  border-color: rgba(201,168,76,0.55);
+-  transform: translateX(4px);
++.about-brand-separator {
++  width: 42px;
++  height: 1px;
++  background: rgba(201, 168, 76, 0.3);
+ }
+ 
+-/* Responsive */
+-@media (max-width: 640px) {
+-  .about-pillar-card {
+-    padding: 28px 22px 24px;
+-  }
+-  .about-pillars-header {
+-    margin-bottom: 40px;
+-  }
+-  .about-pillars-grid {
+-    gap: 16px;
+-  }
++.about-brand-quote {
++  margin: 0;
++  max-width: 84%;
++  text-align: center;
++  font-family: 'Cormorant Garamond', serif;
++  font-size: clamp(24px, 4.2vw, 40px);
++  line-height: 1.12;
++  font-style: italic;
++  color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .card-dark::before {
+-
+   content: '';
+   position: absolute;
+   top: 0; left: 0;
+@@ -1474,20 +1194,63 @@
+   .watermark      { font-size: clamp(60px, 20vw, 120px); }
+   .back-to-top    { bottom: 20px; right: 20px; }
+ 
+-  /* ── Brand card image: mobile ── */
+-  .about-brand-card-image-wrap {
++  .hero-cta-wrap {
++    display: flex;
++    flex-direction: column;
++    width: 100%;
++    padding: 0 24px;
++    gap: 12px;
++    margin-top: -64px;
++    margin-bottom: 24px;
++    z-index: 20;
++    position: relative;
++    top: auto;
++    left: auto;
++    transform: none;
++    align-items: center;
++  }
++  
++  .hero-cta-primary, .hero-cta-secondary {
+     width: 100%;
+-    max-width: 360px;
+-    filter:
+-      drop-shadow(0 2px 6px rgba(0, 0, 0, 0.10))
+-      drop-shadow(0 10px 28px rgba(0, 0, 0, 0.18))
+-      drop-shadow(0 24px 44px rgba(0, 0, 0, 0.12));
++    max-width: 380px;
+   }
+-  .about-brand-card-image {
+-    border-radius: 20px;
++
++  .about-brand-card {
++    width: min(100%, 340px);
++    min-height: 0;
++    aspect-ratio: 0.88;
++    border-radius: 26px;
++    padding: 22px 18px;
++    gap: 24px;
++  }
++
++  .about-brand-card-border {
++    inset: 11px;
++    border-radius: 18px;
+   }
+ 
++  .about-brand-logo {
++    width: clamp(148px, 46vw, 182px);
++    margin-bottom: 14px;
++    transform: translateY(80px);
++  }
+ 
++  .about-brand-title {
++    font-size: clamp(42px, 11.5vw, 52px);
++  }
++
++  .about-brand-tagline {
++    font-size: 11px;
++    letter-spacing: 0.18em;
++    margin-right: 0;
++  }
++
++  .mobile-no-frame {
++    padding: 0 !important;
++    border: none !important;
++    border-radius: 0 !important;
++    box-shadow: none !important;
++  }
+ 
+   /* Mobile resets for padding */
+   .section-dark, .section-dark-2, .section-black, .section-light, .section-dark-atmospheric {
+@@ -1503,7 +1266,7 @@
+ 
+   /* Form & Info Cards */
+   .card-light, .card-dark, .card-glass {
+-    padding: 24px !important;
++    padding: 24px;
+   }
+ }
+ @media (max-width: 1024px) {
