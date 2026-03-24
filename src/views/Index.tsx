@@ -418,9 +418,9 @@ const Index = () => {
           }}
         />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "var(--container-lg)", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "var(--container-lg)", margin: "0 auto", padding: "0 clamp(16px, 4vw, 48px)" }}>
           <Reveal>
-            <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <div style={{ textAlign: "center", marginBottom: "clamp(32px, 6vw, 64px)" }}>
               <span className="eyebrow">Client Reviews</span>
               <h2 className="section-title" style={{ color: "var(--text-primary-dark)" }}>
                 What Our <span className="gold-shimmer">Clients Say</span>
@@ -439,31 +439,23 @@ const Index = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2">
                   <div className="p-1 h-full">
-                    <div 
-                      className="card-glass h-full relative" 
-                      style={{ 
-                        padding: "40px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                        minHeight: "260px"
-                      }}
-                    >
+                    <div className="card-glass h-full relative testimonial-card">
                       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "var(--gradient-gold)", borderRadius: "4px 4px 0 0" }} />
                       
-                      <div>
-                        <Quote className="text-[#C9A84C] opacity-40 mb-4 w-8 h-8" />
-                        <div className="flex gap-1 mb-4">
+                      <div className="flex items-start gap-3 mb-3">
+                        <Quote className="text-[#C9A84C] opacity-40 shrink-0 w-6 h-6 md:w-8 md:h-8" />
+                        <div className="flex gap-0.5 mt-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-[#C9A84C] text-[#C9A84C]" />
+                            <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-[#C9A84C] text-[#C9A84C]" />
                           ))}
                         </div>
-                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px", fontWeight: 400, fontStyle: "italic", lineHeight: 1.6, color: "var(--text-primary-dark)", marginBottom: "24px" }}>
-                          &ldquo;{testimonial.text}&rdquo;
-                        </p>
                       </div>
+
+                      <p className="testimonial-text">
+                        &ldquo;{testimonial.text}&rdquo;
+                      </p>
                       
-                      <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-gold)" }}>
+                      <p className="testimonial-name">
                         — {testimonial.name}
                       </p>
                     </div>
