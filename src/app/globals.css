@@ -1225,9 +1225,9 @@
 
   .hero-cta-primary, .hero-cta-secondary {
     width: 100%;
-    max-width: 280px;
-    padding: 13px 24px !important;
-    font-size: 12px !important;
+    max-width: 220px;
+    padding: 11px 20px !important;
+    font-size: 11px !important;
   }
 
   .about-brand-card {
