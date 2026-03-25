@@ -39,6 +39,10 @@ export const metadata: Metadata = {
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    other: [
+      { rel: "apple-touch-icon", url: "/icons/icon-192x192.png" },
     ],
   },
   description:
@@ -107,6 +111,15 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${cormorant.variable} ${outfit.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        {/* PWA & Apple-specific tags */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="AutoGlam" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+      </head>
       <body className="bg-obsidian text-ivory font-body antialiased" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
