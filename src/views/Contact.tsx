@@ -5,6 +5,7 @@ import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState } from "react";
 import { z } from "zod";
+import { openWhatsApp } from "@/utils/whatsapp";
 
 const Reveal = ({
   children,
@@ -21,8 +22,8 @@ const Reveal = ({
   return (
     <div
       ref={ref}
-      className={`reveal${isVisible ? " visible" : ""} ${delay === 200 ? "reveal-delay-2" : ""} ${className}`}
-      style={style}
+      className={`reveal${isVisible ? " visible" : ""} ${className}`}
+      style={{ transitionDelay: delay ? `${delay}ms` : undefined, ...style }}
     >
       {children}
     </div>
@@ -112,11 +113,10 @@ const Contact = () => {
       .filter((line) => line !== null)
       .join("\n");
 
-    const waNumber = "916363278962"; // India country code + business number
-    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(lines)}`;
+    const waNumber = "919686363735"; // India country code + business number
 
-    // Open WhatsApp in a new tab
-    window.open(waUrl, "_blank", "noopener,noreferrer");
+    // Open WhatsApp using universal utility
+    openWhatsApp(waNumber, lines);
 
     // Show success state on the site
     setSubmitted(true);
@@ -232,14 +232,6 @@ const Contact = () => {
                 {/* Quick links */}
                 <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-[var(--color-light-border)]">
                   <a
-                    href="https://wa.me/919686363735"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary-light flex-1 justify-center !py-3.5 !text-[13px]"
-                  >
-                    WhatsApp <ArrowRight size={14} />
-                  </a>
-                  <a
                     href="https://maps.app.goo.gl/ay6Wu3Vn9R3BGgAp8"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -247,6 +239,12 @@ const Contact = () => {
                   >
                     Directions <ArrowRight size={14} />
                   </a>
+                  <button
+                    onClick={() => openWhatsApp("919686363735")}
+                    className="btn-secondary-light flex-1 justify-center !py-3.5 !text-[13px]"
+                  >
+                    WhatsApp <ArrowRight size={14} />
+                  </button>
                 </div>
               </div>
             </Reveal>

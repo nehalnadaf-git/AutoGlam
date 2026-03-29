@@ -24,8 +24,8 @@ const Reveal = ({
   return (
     <div
       ref={ref}
-      className={`reveal${isVisible ? " visible" : ""} ${delay === 100 ? "reveal-delay-1" : delay === 200 ? "reveal-delay-2" : delay === 300 ? "reveal-delay-3" : ""} ${className}`}
-      style={style}
+      className={`reveal${isVisible ? " visible" : ""} ${className}`}
+      style={{ transitionDelay: delay ? `${delay}ms` : undefined, ...style }}
     >
       {children}
     </div>

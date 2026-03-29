@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Globe, Clock, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
+import FooterWhatsAppBtn from "@/components/FooterWhatsAppBtn";
 
 const Footer = () => (
   <footer style={{ background: "var(--color-dark)", position: "relative" }}>
@@ -105,9 +106,7 @@ const Footer = () => (
             9:00 AM – 8:00 PM
           </p>
           <div style={{ display: "flex", gap: "10px" }}>
-            <a href="https://wa.me/919686363735" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="WhatsApp">
-              <MessageCircle size={16} />
-            </a>
+            <FooterWhatsAppBtn />
             <a href="https://www.instagram.com/agautoglam/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Instagram">
               <Instagram size={16} />
             </a>
@@ -128,7 +127,7 @@ const Footer = () => (
         }}
       >
         <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: "12px", color: "var(--text-muted-dark)" }}>
-          © 2025 Auto Glam Car Service Centre. All Rights Reserved.
+          © 2026 Auto Glam Car Service Centre. All Rights Reserved.
         </p>
 
       </div>

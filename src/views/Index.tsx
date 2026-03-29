@@ -38,8 +38,8 @@ const Reveal = ({
   return (
     <div
       ref={ref}
-      className={`reveal${isVisible ? " visible" : ""} ${delay === 100 ? "reveal-delay-1" : delay === 200 ? "reveal-delay-2" : delay === 300 ? "reveal-delay-3" : delay === 400 ? "reveal-delay-4" : ""} ${className}`}
-      style={style}
+      className={`reveal${isVisible ? " visible" : ""} ${className}`}
+      style={{ transitionDelay: delay ? `${delay}ms` : undefined, ...style }}
     >
       {children}
     </div>
@@ -61,20 +61,20 @@ const services = [
 
 /* ── Testimonials data ── */
 const testimonials = [
-  { name: "Naveen Akalwadi • 🚗 Ceramic Coating", text: "If you are looking for someone to make your car a head turner while you're driving it, right place to bring in your car. My new ScorpioN was given Ceramic Coat which is making people turn heads." },
-  { name: "Sachin Arakeri • 🧹 Interior Cleaning", text: "Detailed interior cleaning of each corner inside the car. High quality products used for cleaning which gives the car a long lasting glossy look. Quick service, professionally cleaned and washed, good service at a very competitive price. I highly recommend AUTO GLAM to everyone." },
-  { name: "Milind Shetti • ✨ Detailing", text: "Looks do kill — neighbour's envy, owner's pride. My Honda City has become brand new. Graceful yet glamorous work. Would recommend it to everyone who are crazy about their car looks and focus on minute details." },
-  { name: "Ashish Singh • 🏆 General", text: "A much needed premium detailing studio in Hubli! These guys are dedicated and their work is impeccable. Would definitely recommend Auto Glam to everyone." },
-  { name: "Basavaraj Gadgimath • 🔥 General", text: "The best ever service center for bikes and cars. The staff's work is so clean and they take care of your vehicle as if it is their own. Thank you AUTOGLAM team for the wonderful service you're providing." },
-  { name: "Akash Pawar • 🛡️ Ceramic Coating", text: "Got Ceramic Coating done for my 1 year old car — it's looking better than it was at the time of delivery 1 year ago!" },
-  { name: "VASANT. MURNAL • 🎨 Paint Correction", text: "After years of exposure to the sun and Hubballi's unpredictable weather, my car's paint had lost its luster. Opting for a professional rubbing and polishing service was the best decision. The technicians meticulously removed minor scratches." },
-  { name: "Sridhar S • 🛡️ PPF", text: "Got PPF for my new car and the quality of the work and product was amazing." },
-  { name: "kevin luthia • ⭐ General", text: "One of the best car detailing studios in Hubli. Staff here is very professional and friendly — they will help you choose what service is best for your car." },
-  { name: "Highway Lounge • 🚿 Washing & PPF", text: "Think of car wash, it's Auto Glam. They are real professionals in terms of car wash and PPF. I just like the way they do their job perfectly." },
-  { name: "Renzil O'Connor • 💬 Customer Service", text: "Veeresh from Autoglam is very responsive and has an incredible customer-centric attitude. I would recommend this place for all your car care needs." },
-  { name: "Avinash Lakkundi • ✨ Polishing", text: "Done my i20 whole vehicle polishing. Best in class in Hubballi. Affordable price and quality." },
-  { name: "Shahzaman Mujahid • 🛡️ PPF", text: "Done PPF for my black Fortuner — happy with the service." },
-  { name: "Adarsh Hublikar • ⭐ General", text: "Awesome service! Mr. Samrat the owner was very polite and kind." },
+  { name: "Naveen Akalwadi", service: "🚗 Ceramic Coating", text: "If you are looking for someone to make your car a head turner while you're driving it, right place to bring in your car. My new ScorpioN was given Ceramic Coat which is making people turn heads." },
+  { name: "Sachin Arakeri", service: "🧹 Interior Cleaning", text: "Detailed interior cleaning of each corner inside the car. High quality products used for cleaning which gives the car a long lasting glossy look. Quick service, professionally cleaned and washed, good service at a very competitive price. I highly recommend AUTO GLAM to everyone." },
+  { name: "Milind Shetti", service: "✨ Detailing", text: "Looks do kill — neighbour's envy, owner's pride. My Honda City has become brand new. Graceful yet glamorous work. Would recommend it to everyone who are crazy about their car looks and focus on minute details." },
+  { name: "Ashish Singh", service: "🏆 General", text: "A much needed premium detailing studio in Hubli! These guys are dedicated and their work is impeccable. Would definitely recommend Auto Glam to everyone." },
+  { name: "Basavaraj Gadgimath", service: "🔥 General", text: "The best ever service center for bikes and cars. The staff's work is so clean and they take care of your vehicle as if it is their own. Thank you AUTOGLAM team for the wonderful service you're providing." },
+  { name: "Akash Pawar", service: "🛡️ Ceramic Coating", text: "Got Ceramic Coating done for my 1 year old car — it's looking better than it was at the time of delivery 1 year ago!" },
+  { name: "VASANT. MURNAL", service: "🎨 Paint Correction", text: "After years of exposure to the sun and Hubballi's unpredictable weather, my car's paint had lost its luster. Opting for a professional rubbing and polishing service was the best decision. The technicians meticulously removed minor scratches." },
+  { name: "Sridhar S", service: "🛡️ PPF", text: "Got PPF for my new car and the quality of the work and product was amazing." },
+  { name: "kevin luthia", service: "⭐ General", text: "One of the best car detailing studios in Hubli. Staff here is very professional and friendly — they will help you choose what service is best for your car." },
+  { name: "Highway Lounge", service: "🚿 Washing & PPF", text: "Think of car wash, it's Auto Glam. They are real professionals in terms of car wash and PPF. I just like the way they do their job perfectly." },
+  { name: "Renzil O'Connor", service: "💬 Customer Service", text: "Veeresh from Autoglam is very responsive and has an incredible customer-centric attitude. I would recommend this place for all your car care needs." },
+  { name: "Avinash Lakkundi", service: "✨ Polishing", text: "Done my i20 whole vehicle polishing. Best in class in Hubballi. Affordable price and quality." },
+  { name: "Shahzaman Mujahid", service: "🛡️ PPF", text: "Done PPF for my black Fortuner — happy with the service." },
+  { name: "Adarsh Hublikar", service: "⭐ General", text: "Awesome service! Mr. Samrat the owner was very polite and kind." },
 ];
 
 const Index = () => {
@@ -507,9 +507,24 @@ const Index = () => {
                         &ldquo;{testimonial.text}&rdquo;
                       </p>
                       
-                      <p className="testimonial-name">
-                        — {testimonial.name}
-                      </p>
+                      <div style={{ marginTop: "16px" }}>
+                        <p className="testimonial-name" style={{ marginBottom: "4px" }}>
+                          — {testimonial.name}
+                        </p>
+                        {testimonial.service && (
+                          <p style={{
+                            fontFamily: "'Outfit', sans-serif",
+                            fontSize: "12px",
+                            fontWeight: 500,
+                            color: "var(--color-gold-dark)",
+                            marginLeft: "18px",
+                            letterSpacing: "0.05em",
+                            opacity: 0.9
+                          }}>
+                            [{testimonial.service}]
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>

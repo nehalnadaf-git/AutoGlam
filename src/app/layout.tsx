@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",

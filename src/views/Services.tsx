@@ -18,7 +18,8 @@ const Reveal = ({
   return (
     <div
       ref={ref}
-      className={`reveal${isVisible ? " visible" : ""} ${delay === 80 ? "reveal-delay-1" : delay === 160 ? "reveal-delay-2" : delay === 240 ? "reveal-delay-3" : ""}`}
+      className={`reveal${isVisible ? " visible" : ""}`}
+      style={{ transitionDelay: delay ? `${delay}ms` : undefined }}
     >
       {children}
     </div>

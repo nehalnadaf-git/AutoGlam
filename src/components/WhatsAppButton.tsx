@@ -1,10 +1,11 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
+import { openWhatsApp } from "@/utils/whatsapp";
 
 const WhatsAppButton = () => (
-  <a
-    href="https://wa.me/919686363735"
-    target="_blank"
-    rel="noopener noreferrer"
+  <button
+    onClick={() => openWhatsApp("919686363735")}
     aria-label="Chat on WhatsApp"
     style={{
       position: "fixed",
@@ -15,6 +16,8 @@ const WhatsAppButton = () => (
       height: "52px",
       borderRadius: "50%",
       background: "#25D366",
+      border: "none",
+      cursor: "pointer",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -22,16 +25,16 @@ const WhatsAppButton = () => (
       transition: "transform 0.3s ease, box-shadow 0.3s ease",
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "translateY(-3px)";
-      e.currentTarget.style.boxShadow = "0 8px 28px rgba(37,211,102,0.45)";
+      (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+      (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 28px rgba(37,211,102,0.45)";
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 4px 20px rgba(37,211,102,0.35)";
+      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+      (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(37,211,102,0.35)";
     }}
   >
     <MessageCircle size={24} fill="white" color="white" />
-  </a>
+  </button>
 );
 
 export default WhatsAppButton;

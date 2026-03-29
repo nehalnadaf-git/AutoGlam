@@ -68,7 +68,7 @@ const TechnicalGallery = () => {
         ref={ref}
         style={{
           width: "100%",
-          padding: "0 20px md:0",
+          padding: "0 20px",
           transition: "opacity 1s ease, transform 1s ease",
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? "translateY(0)" : "translateY(40px)",
