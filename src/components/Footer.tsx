@@ -68,10 +68,6 @@ const Footer = () => (
                 Shop No.01, Bannigida Cross, Kusugal Rd, Keshwapur, Hubballi 580023
               </span>
             </div>
-            <a href="mailto:info@autoglam.in" className="footer-link" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <Globe size={14} style={{ color: "var(--color-gold)", flexShrink: 0 }} />
-              info@autoglam.in
-            </a>
           </div>
         </div>
 

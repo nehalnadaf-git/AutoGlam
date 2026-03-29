@@ -62,7 +62,7 @@ const About = () => (
             <div className="about-brand-card-wrap">
               <div className="about-brand-card-image-wrap">
                 <Image
-                  src="/Images/About Card/Acard.png"
+                  src="/Images/About Card/Acard.webp"
                   alt="Auto Glam Brand Card"
                   width={520}
                   height={640}

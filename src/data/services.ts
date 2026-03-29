@@ -6,6 +6,7 @@ export type Service = {
   seoTitle: string;
   seoDescription: string;
   ogImage: string;
+  image: string;
 };
 
 export const services: Service[] = [
@@ -19,7 +20,8 @@ export const services: Service[] = [
     seoTitle: "Car Washing Service | Auto Glam",
     seoDescription:
       "Professional car washing in Hubballi with careful exterior and interior cleaning for a spotless finish.",
-    ogImage: "/Images/In%20Action/Wash.png",
+    ogImage: "/Service Images/Washing.webp",
+    image: "/Service Images/Washing.webp",
   },
   {
     slug: "interior-cleaning",
@@ -31,7 +33,8 @@ export const services: Service[] = [
     seoTitle: "Interior Car Cleaning | Auto Glam",
     seoDescription:
       "Deep interior cleaning service for a refreshed, hygienic, and premium in-cabin experience.",
-    ogImage: "/Images/In%20Action/Wash3.png",
+    ogImage: "/Service Images/Interior Cleaning.webp",
+    image: "/Service Images/Interior Cleaning.webp",
   },
   {
     slug: "paint-correction",
@@ -43,7 +46,8 @@ export const services: Service[] = [
     seoTitle: "Paint Correction Service | Auto Glam",
     seoDescription:
       "Restore gloss and clarity with professional paint correction for scratches, swirls, and oxidation.",
-    ogImage: "/Images/In%20Action/Wash4.png",
+    ogImage: "/Service Images/Paint correction.webp",
+    image: "/Service Images/Paint correction.webp",
   },
   {
     slug: "glass-treatment",
@@ -55,7 +59,8 @@ export const services: Service[] = [
     seoTitle: "Automotive Glass Treatment | Auto Glam",
     seoDescription:
       "Hydrophobic glass treatment that improves clarity and protection in rain and harsh road conditions.",
-    ogImage: "/Images/In%20Action/Wash5.png",
+    ogImage: "/Service Images/Glass Treatment.webp",
+    image: "/Service Images/Glass Treatment.webp",
   },
   {
     slug: "ceramic-coating",
@@ -67,19 +72,8 @@ export const services: Service[] = [
     seoTitle: "Ceramic Coating Service | Auto Glam",
     seoDescription:
       "Premium ceramic coating for long-term gloss, hydrophobic behavior, and paint surface protection.",
-    ogImage: "/Images/In%20Action/Wash6.png",
-  },
-  {
-    slug: "wrapping",
-    title: "Wrapping",
-    description:
-      "Premium vinyl wrapping that transforms your vehicle's style while protecting the original paintwork underneath.",
-    longDescription:
-      "Custom wrap finishes in gloss, matte, and specialty textures for standout style with reversible paint protection.",
-    seoTitle: "Car Wrapping Service | Auto Glam",
-    seoDescription:
-      "Stylish and protective premium car wraps applied by experienced professionals.",
-    ogImage: "/Images/In%20Action/Wash8.png",
+    ogImage: "/Service Images/Ceramic Coating.webp",
+    image: "/Service Images/Ceramic Coating.webp",
   },
   {
     slug: "ppf",
@@ -91,7 +85,8 @@ export const services: Service[] = [
     seoTitle: "PPF Installation | Auto Glam",
     seoDescription:
       "Professional paint protection film installation for long-lasting defense against chips and scratches.",
-    ogImage: "/Images/In%20Action/Wash9.png",
+    ogImage: "/Service Images/PPF.webp",
+    image: "/Service Images/PPF.webp",
   },
   {
     slug: "painting",
@@ -103,7 +98,21 @@ export const services: Service[] = [
     seoTitle: "Automotive Painting Service | Auto Glam",
     seoDescription:
       "Cars and bikes painting with quality finishes, precision prep, and professional spray techniques.",
-    ogImage: "/Images/In%20Action/Wash10.png",
+    ogImage: "/Service Images/Cars & Bikes Painting.webp",
+    image: "/Service Images/Cars & Bikes Painting.webp",
+  },
+  {
+    slug: "wrapping",
+    title: "Wrapping",
+    description:
+      "Premium vinyl wrapping that transforms your vehicle's style while protecting the original paintwork underneath.",
+    longDescription:
+      "Custom wrap finishes in gloss, matte, and specialty textures for standout style with reversible paint protection.",
+    seoTitle: "Car Wrapping Service | Auto Glam",
+    seoDescription:
+      "Stylish and protective premium car wraps applied by experienced professionals.",
+    ogImage: "/Service Images/Wrapping.webp",
+    image: "/Service Images/Wrapping.webp",
   },
   {
     slug: "accessories",
@@ -115,7 +124,8 @@ export const services: Service[] = [
     seoTitle: "Car and Bike Accessories | Auto Glam",
     seoDescription:
       "Professional installation of premium car and bike accessories with precise fit and finish.",
-    ogImage: "/Images/In%20Action/Wash3.png",
+    ogImage: "/Service Images/Car & Bikes Accessories.webp",
+    image: "/Service Images/Car & Bikes Accessories.webp",
   },
   {
     slug: "headlight-restoration",
@@ -127,6 +137,33 @@ export const services: Service[] = [
     seoTitle: "Headlight Restoration | Auto Glam",
     seoDescription:
       "Restore cloudy headlights for better night visibility and a cleaner front-end look.",
-    ogImage: "/Images/In%20Action/Wash4.png",
+    ogImage: "/Service Images/Headlight Restoration.webp",
+    image: "/Service Images/Headlight Restoration.webp",
+  },
+  {
+    slug: "engine-bay-cleaning",
+    title: "Engine Bay Cleaning",
+    description:
+      "Professional deep cleaning of the engine compartment. Removes grease, grime, and carbon buildup — leaving a spotless, showroom-ready engine bay.",
+    longDescription:
+      "Our safe and meticulous engine detailing process breaks down tough grease and oil, protecting electrical components while restoring rubber and plastics to a factory-fresh appearance.",
+    seoTitle: "Engine Bay Cleaning Service | Auto Glam",
+    seoDescription:
+      "Safe and deep cleaning of your vehicle's engine bay. Removes grease and grime for a spotless, showroom finish.",
+    ogImage: "/Service Images/Engine Bay.webp",
+    image: "/Service Images/Engine Bay.webp",
+  },
+  {
+    slug: "vehicle-polishing",
+    title: "Vehicle Polishing",
+    description:
+      "Professional machine and hand polishing for the full vehicle body. Removes dullness, restores deep gloss, and rejuvenates faded paint to a showroom-level shine.",
+    longDescription:
+      "Using specialized compounds and techniques, we precisely level your clear coat to eliminate hazing and light swirls, producing a mirror-like finish and ultimate paint reflectivity.",
+    seoTitle: "Vehicle Polishing Service | Auto Glam",
+    seoDescription:
+      "Machine and hand polishing for cars and bikes. Restore faded paint, remove dullness, and achieve maximum gloss.",
+    ogImage: "/Service Images/Vehicle Polishing.webp",
+    image: "/Service Images/Vehicle Polishing.webp",
   },
 ];

@@ -39,7 +39,8 @@ const contactSchema = z.object({
 
 const serviceOptions = [
   "Washing", "Interior Cleaning", "Paint Correction", "Glass Treatment",
-  "Ceramic Coating", "Wrapping", "PPF", "Painting", "Accessories", "Headlight Restoration", "Other"
+  "Ceramic Coating", "Wrapping", "PPF", "Painting", "Accessories",
+  "Headlight Restoration", "Engine Bay Cleaning", "Vehicle Polishing", "Other"
 ];
 
 /* Shared input styles */

@@ -6,14 +6,19 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 // New images from public/Images/In Action folder
 const galleryImages = [
-  { src: "/Images/In%20Action/Wash.png",   alt: "Premium car wash in action",             rotation: -6,  offset: 20  },
-  { src: "/Images/In%20Action/Wash3.png",  alt: "Professional detailing precision",        rotation: -2,  offset: -10 },
-  { src: "/Images/In%20Action/Wash4.png",  alt: "Auto Glam workshop expertise",            rotation: 4,   offset: 15  },
-  { src: "/Images/In%20Action/Wash5.png",  alt: "Deep cleaning and restoration",           rotation: -4,  offset: -5  },
-  { src: "/Images/In%20Action/Wash6.png",  alt: "Meticulous paint care",                   rotation: 6,   offset: -20 },
-  { src: "/Images/In%20Action/Wash8.png",  alt: "Showroom finish results",                 rotation: -2,  offset: 10  },
-  { src: "/Images/In%20Action/Wash9.png",  alt: "High-end automotive protection",         rotation: 3,   offset: -15 },
-  { src: "/Images/In%20Action/Wash10.png", alt: "Final quality check at Auto Glam",        rotation: -5,  offset: 5   },
+  { src: "/Images/In%20Action/Wash.webp",         alt: "Premium car wash in action",             rotation: -6,  offset: 20  },
+  { src: "/Images/In%20Action/Wash3.webp",        alt: "Professional detailing precision",        rotation: -2,  offset: -10 },
+  { src: "/Images/In%20Action/wash%20(15).webp", alt: "Premium automotive studio at work",       rotation: 2,   offset: -20 },
+  { src: "/Images/In%20Action/Wash4.webp",        alt: "Auto Glam workshop expertise",            rotation: 4,   offset: 15  },
+  { src: "/Images/In%20Action/Wash6.webp",        alt: "Meticulous paint care",                   rotation: 6,   offset: -20 },
+  { src: "/Images/In%20Action/wash%20(11).webp", alt: "Auto Glam detailing excellence",          rotation: 4,   offset: -10 },
+  { src: "/Images/In%20Action/Wash8.webp",        alt: "Showroom finish results",                 rotation: -2,  offset: 10  },
+  { src: "/Images/In%20Action/wash%20(12).webp", alt: "Precision car care in Hubballi",          rotation: -3,  offset: 18  },
+  { src: "/Images/In%20Action/Wash9.webp",        alt: "High-end automotive protection",          rotation: 3,   offset: -15 },
+  { src: "/Images/In%20Action/wash%20(14).webp", alt: "Expert automotive finishing",             rotation: -6,  offset: 12  },
+  { src: "/Images/In%20Action/wash%20(13).webp", alt: "Paint protection and restoration",        rotation: 5,   offset: -8  },
+  { src: "/Images/In%20Action/Wash5.webp",        alt: "Deep cleaning and restoration",           rotation: -4,  offset: -5  },
+  { src: "/Images/In%20Action/Wash10.webp",       alt: "Final quality check at Auto Glam",        rotation: -5,  offset: 5   },
 ];
 
 const TechnicalGallery = () => {

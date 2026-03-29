@@ -8,8 +8,7 @@ import MarqueeBanner from "@/components/MarqueeBanner";
 import CTABanner from "@/components/CTABanner";
 import TechnicalGallery from "@/components/TechnicalGallery";
 import {
-  Droplets, SprayCan, Paintbrush, GlassWater, Shield, Layers,
-  ArrowRight, Star, Quote, Film, Lightbulb
+  ArrowRight, Star, Quote,
 } from "lucide-react";
 import { useRef } from "react";
 import {
@@ -47,25 +46,35 @@ const Reveal = ({
   );
 };
 
-/* ── Services data ── */
+/* ── Services data — now image-backed ── */
 const services = [
-  { icon: Droplets,   title: "Washing",          desc: "Complete exterior & interior wash to remove dirt, dust, and contaminants for a pristine shine." },
-  { icon: SprayCan,   title: "Interior Cleaning", desc: "Vacuuming, surface wiping, and deep clean for a refreshed, spotless cabin." },
-  { icon: Paintbrush, title: "Paint Correction",  desc: "Eliminate scratches and swirl marks for a flawless, mirror-like paint finish." },
-  { icon: GlassWater, title: "Glass Treatment",   desc: "Advanced coating for lasting visibility and maximum windshield protection." },
-  { icon: Shield,     title: "Ceramic Coating",   desc: "Liquid polymer for lasting gloss, hydrophobic protection, and showroom finish." },
-  { icon: Layers,     title: "Wrapping",           desc: "Premium vinyl wrapping for style and paint protection with a distinctive appeal." },
-  { icon: Film,       title: "PPF",                desc: "Transparent film shield that protects against rock chips, scratches, and environmental damage — invisible, permanent protection." },
-  { icon: Lightbulb,  title: "Headlight Restoration", desc: "Restore faded, yellowed headlights to crystal clarity — improving both the aesthetics and safety of your vehicle." },
+  { title: "Washing",                    desc: "Complete exterior & interior wash to remove dirt and contaminants for a pristine shine.",                image: "/Service Images/Washing.webp",                   href: "/services/washing" },
+  { title: "Interior Cleaning",          desc: "Vacuuming, deep-clean treatments to refresh and restore every inch of your car's cabin.",               image: "/Service Images/Interior Cleaning.webp",         href: "/services/interior-cleaning" },
+  { title: "Paint Correction",           desc: "Eliminate scratches and swirl marks for a flawless, mirror-like paint finish.",                         image: "/Service Images/Paint correction.webp",          href: "/services/paint-correction" },
+  { title: "Glass Treatment",            desc: "Advanced ceramic coating for lasting visibility and hydrophobic windshield protection.",                  image: "/Service Images/Glass Treatment.webp",           href: "/services/glass-treatment" },
+  { title: "PPF",                        desc: "Transparent film shield against rock chips, scratches, and environmental damage.",                        image: "/Service Images/PPF.webp",                       href: "/services/ppf" },
+  { title: "Ceramic Coating",            desc: "Liquid polymer for lasting gloss, hydrophobic protection, and a permanent showroom finish.",             image: "/Service Images/Ceramic Coating.webp",           href: "/services/ceramic-coating" },
+  { title: "Cars & Bikes Painting",      desc: "Professional full-body painting using high-quality automotive finishes for lasting beauty.",             image: "/Service Images/Cars & Bikes Painting.webp",     href: "/services/painting" },
+  { title: "Wrapping",                   desc: "Premium vinyl wrapping for bold style and paint protection.",                                            image: "/Service Images/Wrapping.webp",                  href: "/services/wrapping" },
+  { title: "Cars & Bikes Accessories",   desc: "Expert installation of automotive accessories — ensuring every fitment is precise, clean, and professionally finished.",               image: "/Service Images/Car & Bikes Accessories.webp",   href: "/services/accessories" },
 ];
 
 /* ── Testimonials data ── */
 const testimonials = [
-  { name: "Rahul M., Hubballi",    text: "Auto Glam transformed my car completely. The ceramic coating is flawless and the team was incredibly professional." },
-  { name: "Priya K.",              text: "Best car wash and interior cleaning I've experienced. Highly recommend for anyone in Hubballi." },
-  { name: "Arun S.",               text: "Got PPF done for my new car. Excellent work and great attention to detail." },
-  { name: "Suresh D., Dharwad",    text: "The wrapping work on my bike was outstanding. Colors are vibrant and the finish is top-notch." },
-  { name: "Meena R., Hubballi",    text: "My car looks brand new after the paint correction. The team really knows what they're doing!" },
+  { name: "Naveen Akalwadi • 🚗 Ceramic Coating", text: "If you are looking for someone to make your car a head turner while you're driving it, right place to bring in your car. My new ScorpioN was given Ceramic Coat which is making people turn heads." },
+  { name: "Sachin Arakeri • 🧹 Interior Cleaning", text: "Detailed interior cleaning of each corner inside the car. High quality products used for cleaning which gives the car a long lasting glossy look. Quick service, professionally cleaned and washed, good service at a very competitive price. I highly recommend AUTO GLAM to everyone." },
+  { name: "Milind Shetti • ✨ Detailing", text: "Looks do kill — neighbour's envy, owner's pride. My Honda City has become brand new. Graceful yet glamorous work. Would recommend it to everyone who are crazy about their car looks and focus on minute details." },
+  { name: "Ashish Singh • 🏆 General", text: "A much needed premium detailing studio in Hubli! These guys are dedicated and their work is impeccable. Would definitely recommend Auto Glam to everyone." },
+  { name: "Basavaraj Gadgimath • 🔥 General", text: "The best ever service center for bikes and cars. The staff's work is so clean and they take care of your vehicle as if it is their own. Thank you AUTOGLAM team for the wonderful service you're providing." },
+  { name: "Akash Pawar • 🛡️ Ceramic Coating", text: "Got Ceramic Coating done for my 1 year old car — it's looking better than it was at the time of delivery 1 year ago!" },
+  { name: "VASANT. MURNAL • 🎨 Paint Correction", text: "After years of exposure to the sun and Hubballi's unpredictable weather, my car's paint had lost its luster. Opting for a professional rubbing and polishing service was the best decision. The technicians meticulously removed minor scratches." },
+  { name: "Sridhar S • 🛡️ PPF", text: "Got PPF for my new car and the quality of the work and product was amazing." },
+  { name: "kevin luthia • ⭐ General", text: "One of the best car detailing studios in Hubli. Staff here is very professional and friendly — they will help you choose what service is best for your car." },
+  { name: "Highway Lounge • 🚿 Washing & PPF", text: "Think of car wash, it's Auto Glam. They are real professionals in terms of car wash and PPF. I just like the way they do their job perfectly." },
+  { name: "Renzil O'Connor • 💬 Customer Service", text: "Veeresh from Autoglam is very responsive and has an incredible customer-centric attitude. I would recommend this place for all your car care needs." },
+  { name: "Avinash Lakkundi • ✨ Polishing", text: "Done my i20 whole vehicle polishing. Best in class in Hubballi. Affordable price and quality." },
+  { name: "Shahzaman Mujahid • 🛡️ PPF", text: "Done PPF for my black Fortuner — happy with the service." },
+  { name: "Adarsh Hublikar • ⭐ General", text: "Awesome service! Mr. Samrat the owner was very polite and kind." },
 ];
 
 const Index = () => {
@@ -80,7 +89,7 @@ const Index = () => {
       <section className="relative w-full bg-black pt-[76px] md:pt-[96px] overflow-hidden">
         <div className="w-full max-w-[1920px] relative mx-auto overflow-hidden">
           <Image
-            src="/Banner/Web%20Banner%20-%20wide.png"
+            src="/Banner/Web%20Banner%20-%20wide.webp"
             alt="Auto Glam Services Portfolio"
             width={1920}
             height={900}
@@ -88,7 +97,7 @@ const Index = () => {
             className="w-full h-auto hidden md:block"
           />
           <Image
-            src="/Banner/Mobile%20Banner.png"
+            src="/Banner/Mobile%20Banner%20-%20New.webp"
             alt="Auto Glam Services Portfolio Mobile"
             width={1080}
             height={1440}
@@ -203,7 +212,7 @@ const Index = () => {
                 }}
               >
                 <Image
-                  src="/Images/Why%20choose%20Auto%20glam/Main4.png"
+                  src="/Images/Why%20choose%20Auto%20glam/Main4.webp"
                   alt="Auto Glam workshop and expert services"
                   width={1200}
                   height={900}
@@ -241,23 +250,66 @@ const Index = () => {
             </div>
           </Reveal>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "24px",
-            }}
-          >
+          {/* Image card grid — 1 col mobile, 2 col md, 3 col lg */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 80} className={`h-full ${i >= 6 ? "hidden md:block" : ""}`}>
-                <div className="card-dark h-full flex flex-col">
-                  <div className="service-icon-wrap">
-                    <s.icon size={22} color="var(--color-gold)" />
+              <Reveal key={s.title} delay={(i % 3) * 80} className={`h-full ${i >= 6 ? "hidden lg:block" : ""}`}>
+                <div
+                  className="group relative block w-full overflow-hidden service-img-card"
+                  style={{ borderRadius: "4px", textDecoration: "none" }}
+                >
+                  <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      style={{ objectPosition: "center" }}
+                    />
+                    {/* Dark gradient overlay */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.45) 45%, transparent 100%)",
+                      }}
+                    />
+                    {/* Gold top line on hover */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px] origin-left transition-transform duration-500 ease-out scale-x-0 group-hover:scale-x-100"
+                      style={{ background: "var(--gradient-gold)" }}
+                    />
+                    {/* Card text */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                      <h3
+                        style={{
+                          fontFamily: "'Outfit', sans-serif",
+                          fontSize: "clamp(15px, 2.2vw, 17px)",
+                          fontWeight: 600,
+                          letterSpacing: "0.02em",
+                          color: "#FFFFFF",
+                          marginBottom: "6px",
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {s.title}
+                      </h3>
+                      <p
+                        className="transition-all duration-500 ease-out max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100"
+                        style={{
+                          fontFamily: "'Outfit', sans-serif",
+                          fontSize: "13px",
+                          fontWeight: 300,
+                          lineHeight: 1.65,
+                          color: "rgba(255,255,255,0.82)",
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {s.desc}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="card-title" style={{ color: "var(--text-primary-dark)", marginBottom: "10px" }}>
-                    {s.title}
-                  </h3>
-                  <p className="body-text flex-grow">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -366,7 +418,7 @@ const Index = () => {
                 }}
               >
                 <Image
-                  src="/Images/Built%20on%20passion,%20driven%20by%20excellence/Mainv2.png"
+                  src="/Images/Built%20on%20passion,%20driven%20by%20excellence/Mainv2.webp"
                   alt="Built on Passion, Driven by Excellence"
                   width={900}
                   height={1125}
@@ -390,7 +442,7 @@ const Index = () => {
           MARQUEE #2 — different items
       ══════════════════════════════════════════ */}
       <MarqueeBanner
-        items={["WASHING", "CERAMIC COATING", "PPF", "WRAPPING", "PAINT CORRECTION", "GLASS TREATMENT", "ACCESSORIES", "HEAD LIGHT RESTORATION", "CAR PAINTING"]}
+        items={["WASHING", "CERAMIC COATING", "PPF", "WRAPPING", "PAINT CORRECTION", "GLASS TREATMENT", "ACCESSORIES", "CAR PAINTING"]}
       />
 
       {/* ══════════════════════════════════════════
