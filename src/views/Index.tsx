@@ -481,92 +481,61 @@ const Index = () => {
           </Reveal>
 
           {/* CAROUSEL TESTIMONIALS */}
-          <div style={{ position: "relative" }}>
-            {/* Left fade */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: -1,
-                bottom: 0,
-                width: "clamp(60px, 12vw, 150px)",
-                background: "linear-gradient(to right, var(--color-dark, #0F0F0F) 0%, transparent 100%)",
-                zIndex: 10,
-                pointerEvents: "none",
-              }}
-            />
-            {/* Right fade */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0,
-                right: -1,
-                bottom: 0,
-                width: "clamp(60px, 12vw, 150px)",
-                background: "linear-gradient(to left, var(--color-dark, #0F0F0F) 0%, transparent 100%)",
-                zIndex: 10,
-                pointerEvents: "none",
-              }}
-            />
-
-            <Carousel
-              plugins={[plugin.current]}
-              className="w-full max-w-4xl mx-auto"
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2">
-                    <div className="p-1 h-full">
-                      <div className="card-glass h-full relative testimonial-card">
-                        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "var(--gradient-gold)", borderRadius: "4px 4px 0 0" }} />
-                        
-                        <div className="flex items-start gap-3 mb-3">
-                          <Quote className="text-[#C9A84C] opacity-40 shrink-0 w-6 h-6 md:w-8 md:h-8" />
-                          <div className="flex gap-0.5 mt-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-[#C9A84C] text-[#C9A84C]" />
-                            ))}
-                          </div>
-                        </div>
-
-                        <p className="testimonial-text">
-                          &ldquo;{testimonial.text}&rdquo;
-                        </p>
-                        
-                        <div style={{ marginTop: "16px" }}>
-                          <p className="testimonial-name" style={{ marginBottom: "4px" }}>
-                            — {testimonial.name}
-                          </p>
-                          {testimonial.service && (
-                            <p style={{
-                              fontFamily: "'Outfit', sans-serif",
-                              fontSize: "12px",
-                              fontWeight: 500,
-                              color: "var(--color-gold-dark)",
-                              marginLeft: "18px",
-                              letterSpacing: "0.05em",
-                              opacity: 0.9
-                            }}>
-                              [{testimonial.service}]
-                            </p>
-                          )}
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-4xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+                  <div className="p-1 h-full">
+                    <div className="card-glass h-full relative testimonial-card">
+                      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "var(--gradient-gold)", borderRadius: "4px 4px 0 0" }} />
+                      
+                      <div className="flex items-start gap-3 mb-3">
+                        <Quote className="text-[#C9A84C] opacity-40 shrink-0 w-6 h-6 md:w-8 md:h-8" />
+                        <div className="flex gap-0.5 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-[#C9A84C] text-[#C9A84C]" />
+                          ))}
                         </div>
                       </div>
+
+                      <p className="testimonial-text">
+                        &ldquo;{testimonial.text}&rdquo;
+                      </p>
+                      
+                      <div style={{ marginTop: "16px" }}>
+                        <p className="testimonial-name" style={{ marginBottom: "4px" }}>
+                          — {testimonial.name}
+                        </p>
+                        {testimonial.service && (
+                          <p style={{
+                            fontFamily: "'Outfit', sans-serif",
+                            fontSize: "12px",
+                            fontWeight: 500,
+                            color: "var(--color-gold-dark)",
+                            marginLeft: "18px",
+                            letterSpacing: "0.05em",
+                            opacity: 0.9
+                          }}>
+                            [{testimonial.service}]
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              <div className="flex justify-center mt-10 gap-4 relative z-20">
-                <CarouselPrevious className="relative inset-0 translate-y-0 h-10 w-10 border-[#C9A84C]/30 bg-transparent hover:bg-[#C9A84C]/10 text-white" />
-                <CarouselNext className="relative inset-0 translate-y-0 h-10 w-10 border-[#C9A84C]/30 bg-transparent hover:bg-[#C9A84C]/10 text-white" />
-              </div>
-            </Carousel>
-          </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            <div className="flex justify-center mt-10 gap-4 relative z-20">
+              <CarouselPrevious className="relative inset-0 translate-y-0 h-10 w-10 border-[#C9A84C]/30 bg-transparent hover:bg-[#C9A84C]/10 text-white" />
+              <CarouselNext className="relative inset-0 translate-y-0 h-10 w-10 border-[#C9A84C]/30 bg-transparent hover:bg-[#C9A84C]/10 text-white" />
+            </div>
+          </Carousel>
 
 
         </div>
